@@ -13,7 +13,7 @@ year=20210000
 weekday=("(월)" "(화)" "(수)" "(목)" "(금)")
 
 # Input Value
-echo -e "월, 일을 입력하세요 (ex. mmdd) "
+echo -e "생성할 주차의 월요일 날짜의 월, 일을 입력하세요 (ex. mmdd) "
 read date
 echo "******************************************"
 # Make file
