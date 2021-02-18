@@ -12,7 +12,7 @@
 #                                            
 
 # Project PATH
-PROJ_PATH=/Users/su/Desktop/report.wiki/test/wow
+PROJ_PATH=/Users/su/Desktop/report.wiki
 
 # Values 
 type=${1}
@@ -21,14 +21,14 @@ year=20210000
 
 # To avoid git crash
 cd $PROJ_PATH
-echo a
-ls
-echo b
+git pull
+echo "*********** finish git pull ************"
 cd -
+echo 
 
 # if 
 if [ "${type}" == "m" -o "${type}" == "" ]; then
-	echo start make!
+	echo "************* start make! ***************"
 	bash makewiki.sh $PROJ_PATH
 elif [ "${type}" == "r" -o "${date}" != "" ]; then
 	echo start remove!
