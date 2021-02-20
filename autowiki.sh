@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# this program is autowiki program           
+#     this program is autowiki program       
 #                                            
 #         HOW TO MAKE FILE ?                 
-# bash autowiki.sh 'm' or none to  make wiki 
+#  ./autowiki.sh '5' or none to  make wiki   
 #                                            
 #                                            
-#         HOW TO REMOVE WEEK ?               
-# bash autowiki.sh 'r' to remove wiki        
-#    !!!! 'mmdd' is must be Monday !!!!      
+#         HOW TO REMOVE FILE ?               
+#  ./autowiki.sh 'r' 'mmdd' to remove wiki   
+#    !!!! 'mmdd' must be needed !!!!         
 #                                            
 
 # Project Path
