@@ -1,7 +1,12 @@
 # !/bin/bash
 
-# Wiki Path
-WIKI_PATH=/Users/bigpel/Desktop/report.wiki
+# var 
+type=${1}
+yncheck=""
+wd=0
+if [ "$type" == 5 ]; then
+	wd=2
+fi
 
 function calc_offset()
 {
@@ -21,7 +26,7 @@ function calc_offset()
 
 function make_file()
 {
-	for ((i = 0; i < 7; i++))
+	for ((i = 0; i < 7 - wd; i++))
 	do
 		offset=$((${1} - i))
 		if [ ${offset} -ge 0 ]; then
@@ -33,9 +38,25 @@ function make_file()
 			date=`echo $(date -v+${offset}d +%Y%m%d)`
 		fi
 		name=`echo ${date}${day}`
-		cat ./form.txt > ${name}.md
-		sed -i "" "s/DATETIME/${name}/" ${name}.md
+		if [ "$type" == 5 -o "$type" == 7 ]; then
+			cat ./form.txt > ${name}.md
+			sed -i "" "s/DATETIME/${name}/" ${name}.md
+		elif check $name; then
+			cat ./form.txt > ${name}.md
+			sed -i "" "s/DATETIME/${name}/" ${name}.md
+		fi
 	done
+}
+
+function check()
+{
+	echo -ne "$1.md파일을 생성하시겠습니까? (y/n)\t"
+	read yn
+	if [ "${yn}" == "y" -o "${yn}" == "Y"  ]; then
+		return 0
+	else
+		return 1
+	fi
 }
 
 echo 오프셋 계산 중...
