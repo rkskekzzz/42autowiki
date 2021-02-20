@@ -11,32 +11,25 @@
 #    !!!! 'mmdd' is must be Monday !!!!      
 #                                            
 
-# Project PATH
-PROJ_PATH=/Users/su/Desktop/report.wiki
+# Project Path
+PROJ_PATH=
 
-# Values 
+# Values
 type=${1}
-date=${2}
-year=20210000
 
-# To avoid git crash
+# To Avoid Git Crash
 cd $PROJ_PATH
 git pull
-echo "*********** finish git pull ************"
+echo "Git Pull 끝"
 cd -
 echo 
 
-# if 
+# Branch 
 if [ "${type}" == "m" -o "${type}" == "" ]; then
-	echo "************* start make! ***************"
+	echo "만들기 시작"
 	bash makewiki.sh $PROJ_PATH
 elif [ "${type}" == "r" -o "${date}" != "" ]; then
-	echo start remove!
-	for n in 0 1 2 3 4
-	do
-		rmdate=`expr $year + $date + $n`
-		rm -rvf $PROJ_PATH/*${rmdate}*
-	done
-	echo end remove!
+	echo "지우기 시작"
+		rm -rvf $PROJ_PATH/
+	echo "지우기 끝"
 fi
-
