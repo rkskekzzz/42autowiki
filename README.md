@@ -1,6 +1,6 @@
 # 42autowiki
 
-## 42 서울 보고서 파일 자동 생성 프로젝트 with @bigpel
+## 42 서울 보고서 파일 자동 생성 프로젝트 with [bigpel(jseo in 42)](https://github.com/bigpel66)
 
 안녕하세요!
 42 Seoul Cadet, suhshin 입니다!
